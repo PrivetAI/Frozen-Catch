@@ -14,7 +14,8 @@ struct FrozenCatchApp: App {
                 if let ready = frozenCatchLinkReady {
                     if ready {
                         FrozenCatchWebPanel(urlString: frozenCatchSourceLink)
-                            .edgesIgnoringSafeArea(.all)
+                            .edgesIgnoringSafeArea(.bottom)
+                            .background(Color.black.ignoresSafeArea())
                     } else {
                         ContentView()
                             .environmentObject(store)

@@ -11,6 +11,9 @@ struct FrozenCatchWebPanel: UIViewRepresentable {
             config.mediaTypesRequiringUserActionForPlayback = []
         }
         let webView = WKWebView(frame: .zero, configuration: config)
+        webView.scrollView.contentInsetAdjustmentBehavior = .always
+        webView.isOpaque = true
+        webView.backgroundColor = .black
         webView.scrollView.bounces = true
         webView.allowsBackForwardNavigationGestures = true
         if let url = URL(string: urlString) {
